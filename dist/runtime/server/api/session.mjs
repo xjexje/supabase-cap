@@ -25,6 +25,7 @@ export default defineEventHandler(async (event) => {
         sameSite: cookieOptions.sameSite
       }
     ); */
+    console.log('signEvent: SIGNED_IN')
     CapacitorCookies.setCookie({
       url: cookieOptions.domain,
       key: `${cookieOptions.name}-access-token`,
@@ -41,6 +42,7 @@ export default defineEventHandler(async (event) => {
         path: cookieOptions.path
       }
     ); */
+    console.log('signEvent: SIGNED_OUT')
     CapacitorCookies.clearAllCookies();
   }
   return "auth cookie set";
